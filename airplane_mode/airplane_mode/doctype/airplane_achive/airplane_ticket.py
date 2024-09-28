@@ -14,10 +14,8 @@ class AirplaneTicket(Document):
             frappe.throw("Each add-on type must be unique.")
     
     def before_submit(self):
-        if not self.ticket_status:
-            frappe.throw("Please set the status of the ticket before submission.")
-        elif self.ticket_status != "Boarded":
-            frappe.throw("Only tickets with status 'Boarded' can be submitted.")
+        if self.status != "Boarded":
+            frappe.throw("Ticket can only be submitted if status is 'Boarded'.")
     
     def before_insert(self):
         random_number = random.randint(1, 99)
