@@ -2,13 +2,13 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "prompt",
- "creation": "2024-08-08 12:29:41.581262",
+ "creation": "2024-11-08 18:33:56.699937",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "code",
-  "city",
-  "country"
+  "country",
+  "city"
  ],
  "fields": [
   {
@@ -19,23 +19,28 @@
    "reqd": 1
   },
   {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "City",
-   "reqd": 1
-  },
-  {
    "fieldname": "country",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Country",
    "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-09-14 08:48:59.906073",
+ "links": [
+  {
+   "link_doctype": "Shop",
+   "link_fieldname": "airport"
+  }
+ ],
+ "modified": "2024-11-12 11:46:30.357030",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport",

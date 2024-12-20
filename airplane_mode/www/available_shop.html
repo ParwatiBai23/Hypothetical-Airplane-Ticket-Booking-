@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Airport</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #4CAF50;
+        }
+
+        option {
+            padding: 10px;
+        }
+
+        .result {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .result h2 {
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select an Airport</h1>
+        <form method="GET">
+            <select name="airport" onchange="this.form.submit()">
+                <option value="">Select an Airport</option>
+                {% for airport in airports %}
+                    <option value="{{ airport.name }}" {% if airport.name == selected_airport %}selected{% endif %}>
+                        {{ airport.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+
+        <div class="result">
+            {% if selected_airport %}
+                <h2>Available Shops in {{ selected_airport }}: {{ airport_shop_counts[selected_airport] }}</h2>
+            {% else %}
+                <div class="message">
+                    <h2>Select an airport to see available shops</h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

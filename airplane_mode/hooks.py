@@ -130,6 +130,8 @@ app_license = "mit"
 # 	}
 # }
 
+
+
 # Scheduled Tasks
 # ---------------
 
@@ -150,6 +152,15 @@ app_license = "mit"
 # 		"airplane_mode.tasks.monthly"
 # 	],
 # }
+scheduler_events = {
+    "monthly": [
+        "airplane_mode.airport_shop_management.send_rent_reminders"
+    ]
+}
+
+
+
+
 
 # Testing
 # -------
@@ -159,6 +170,9 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
+
+
+
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "airplane_mode.event.get_events"
 # }

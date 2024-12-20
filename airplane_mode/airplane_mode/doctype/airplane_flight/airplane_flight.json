@@ -19,7 +19,12 @@
   "amended_from",
   "source_airplane_code",
   "destination_airplane_code",
-  "is_published"
+  "is_published",
+  "section_break_lvna",
+  "crew_members",
+  "section_break_mpcb",
+  "total_crew_members",
+  "gate_number"
  ],
  "fields": [
   {
@@ -107,6 +112,31 @@
    "fieldname": "is_published",
    "fieldtype": "Check",
    "label": "Is Published"
+  },
+  {
+   "fieldname": "section_break_lvna",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Crew Member List"
+  },
+  {
+   "fieldname": "section_break_mpcb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_crew_members",
+   "fieldtype": "Int",
+   "label": "Total Crew Members",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "has_web_view": 1,
@@ -119,7 +149,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-09-27 22:52:29.865847",
+ "modified": "2024-10-28 10:23:59.514156",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -137,6 +167,48 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1
   }
  ],
  "route": "flights",
